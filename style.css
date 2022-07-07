@@ -19,11 +19,30 @@ body {
 
 .instagram-wrapper {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: start;
-    width: 60%;
+    justify-content: space-between;
     height: 100vh;
 }
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    min-height: 85vh;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 15vh;
+    margin: auto;
+}
+
 
 .instagram-phone {
     display: flex;
@@ -33,7 +52,7 @@ body {
 }
 
 .instagram-phone img {
-    height: 50rem;
+    height: 70vh;
 }
 
 .instagram-continue {
@@ -41,11 +60,21 @@ body {
     align-items: center; /* horizontal */
     justify-content: space-around; /* vertical */
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     min-height: 34rem;
 }
 
-.group {
+.group-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 100%;
+    padding-top: 1.3rem 0;
+    border: 1px solid lightgray;
+}
+.group-2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,46 +83,91 @@ body {
     width: 100%;
     padding: 1.3rem 0;
     border: 1px solid lightgray;
+    margin-top: 8px;
 }
 
-.group:nth-child(1) {
+.group-1:nth-child(1) {
     min-height: 19rem;
 }
 
 .instagram-logo {
     height: 3rem;
+    margin: 40px 0 20px 0;
+}
+
+.profiles{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 50%;
+}
+
+.profiles::after{
+    content: "";
+    height: 1px;
+    width: 90%;
+    background-color: lightgray;
+    margin: 5px auto;
+}
+
+.profiles::before{
+    content: "";
+    height: 1px;
+    width: 90%;
+    background-color: lightgray;
+    margin: 5px auto;
+}
+
+.profile-individual{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 15px;
 }
 
 .profile-photo {
     display: flex;
-    justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    overflow: hidden;
+    justify-content: center;
 }
 
-.profile-photo img {
-    height: 6rem;
+.profile-photo img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: fill;
+}
+
+.profile-photo p{
+    padding: 0 15px;
+    font-size: 11px;
 }
 
 .instagram-login {
     background-color: #0095f6;
     color: #ffffff;
-    padding: 8px;
+    padding: 7px 9px;
     border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
 }
 
-.instagram-logout {
+.instagram-gereciar {
     color: #0095f6;
-    margin-top: 1rem;
+    margin: 25px 0;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .not-account {
-    color: rgb(160, 160, 160);
+    color: #000;
+    font-size: 12px;
 }
 
 .link-blue {
     color: #0095f6;
+    font-size: 12px;
 }
 
 .get-the-app {
@@ -105,36 +179,54 @@ body {
     padding: 1.3rem 0;
 }
 
+.get-app{
+    font-size: 12px;
+}
+
 .download {
     display: flex;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
 }
 
 .app-download {
-    height: 3rem;
-    width: 10rem;
-    background-size: cover;
+    height: 2rem;
+    width: 8rem;
+    background-size:cover;
+    
 }
 
-.app-download:nth-child(1) {
-    background-image: url('./img/apple-button.png');
+.app-download img{
+    width: 95%;
 }
 
-.app-download:nth-child(2) {
-    background-image: url('./img/googleplay-button.png');
+.footer-link{
+    display: flex;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
+
+.footer-link li a {
+    font-size: 10px;
+    color: #8e8e8e;
+    padding: 0 5px;
+    line-height: 10px;
+}
+
+.footer footer :nth-child(3) li a{
+    line-height: 40px;
+}
+
 
 /* media queries */
 
-
-@media (max-width: 1024px) {
-    .instagram-wrapper {
-        width: 90%;
-    }
-}
 
 @media (max-width: 650px) {
     body {
@@ -150,10 +242,16 @@ body {
     }
 
     .instagram-continue {
-        width: 100%;
+        min-width: 350px;
     }
     
     .group {
         border: 1px solid transparent;
+    }
+}
+
+@media (max-width: 375px) {
+    .instagram-continue {
+        min-width: 300px;
     }
 }
